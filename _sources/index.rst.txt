@@ -6,7 +6,11 @@
 The EUPP postprocessing benchmark dataset documentation
 =======================================================
 
-Intro
+This website document the EUMETNET postprocessing benchmark datasets, an initiative to provide high-quality datasets to derive
+easily analysis-ready datasets that can be used to perform benchmarking tasks of weather forecast postprocessing methods.
+
+The main tool to download and manage the data is a Python plugin. It can however convert the data to formats that can
+then be processed by other languages, and a few line of Python codes suffice to obtain the datasets.
 
 
 .. note::
