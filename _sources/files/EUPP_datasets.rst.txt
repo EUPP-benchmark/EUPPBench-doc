@@ -122,7 +122,7 @@ It includes:
 +---------------------------+-----------+---------------------------+
 | Parameter name            | ECMWF key | Remarks                   |
 +===========================+===========+===========================+
-| `2 metre                  | 2t        |                           |
+| `2 metre                  | 2t/t2m    |                           |
 | temperature <http         |           |                           |
 | s://apps.ecmwf.int/codes/ |           |                           |
 | grib/param-db/?id=167>`__ |           |                           |
@@ -445,7 +445,7 @@ It includes:
 +---------------------------------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------+
 | Parameter name                                                                  | ECMWF key | Remarks                                                                                                     |
 +=================================================================================+===========+=============================================================================================================+
-| `Land use <https://apps.ecmwf.int/codes/grib/param-db/?id=260184>`_             | landu     | Extracted from the `CORINE 2018 <https://land.copernicus.eu/pan-european/corine-land-cover>`_ dataset.      |
+| `Land use <https://apps.ecmwf.int/codes/grib/param-db/?id=260184>`_             | landu     | Extracted from the `CORINE 2018`_ dataset.                                                                  |
 |                                                                                 |           | Values and associated land type differ from the ECMWF one.                                                  |
 |                                                                                 |           | Please look at the “legend” entry in the metadata for more details.                                         |
 +---------------------------------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------+
@@ -742,43 +742,135 @@ using the ``get_observations_as_xarray`` method:
 4 - Explanation of the metadata
 -------------------------------
 
-The following metadata are available in the gridded forecast and reforecast data:
+For all data, attributes specifying the sources and the license are always present.
+Depending on the kind of dataset, dimensions and information are embedded in the data as follow:
 
-1. **latitude**: latitude of the grid points.
-2. **longitude**: longitude of the grid points.
-3. **depthBelowLandLayer**: layer below the surface (valid for some variables only, here there is only the upper surface level).
-4. **number**: number of the ensemble member. The 0-th member is the control run. Also present in observation for compatibility reasons, but set to 0.
-5. **time**: the forecast or reforecast date (reforecasts are only issued on Mondays and Thursdays).
-6. **year**: dimension to identify the year in the past, year=1 means a forecast valid 20 years ago at the reforecast day and month, year=20 means a forecast valid one year before the reforecast date. Only valid for reforecasts.
-7. **step**: step of the forecast (the lead time).
-8. **surface**: layer of the variable considered (here there is just one, at the surface).
-9. **valid_time**: actual time and date of the corresponding forecast data.
-10. **isobaricInhPa**: pressure level in hectopascal (or millibar).
+Gridded data
+~~~~~~~~~~~~
 
-Other metadata may be present for station data:
+The following metadata are available in the gridded forecast, reforecast and data:
 
-1. **station_latitude**: latitude of the station.
-2. **station_longitude**: longitude of the station.
-3. **station_altitude**: altitude of the station (in meter).
-4. **station_id**: unique identifier of the station.
-5. **station_land_usage**: land usage at the station location, extracted from the `CORINE 2018 <https://land.copernicus.eu/pan-european/corine-land-cover>`_ dataset.
-6. **station_name**: name of the station.
-7. **model_latitude**: latitude of the model grid point.
-8. **model_longitude**: longitude of the model grid point.
-9. **model_altitude**: true altitude (in meter) of the model grid point, extracted from the `EU-DEMv1.1 <https://land.copernicus.eu/imagery-in-situ/eu-dem>`__ data elevation model dataset.
-10. **model_orography**: surface height (in meter) in the model at the model grid point.
-11. **model_land_usage**: land usage at the model grid point, extracted from the `CORINE 2018 <https://land.copernicus.eu/pan-european/corine-land-cover>`_ dataset.
++-------------------------------------+----------------------------------------------------------------------+
+| Metadata                            | Description                                                          |
++=====================================+======================================================================+
+|  **latitude**                       | Latitude of the grid points.                                         |
++-------------------------------------+----------------------------------------------------------------------+
+|  **longitude**                      | Longitude of the grid points.                                        |
++-------------------------------------+----------------------------------------------------------------------+
+|  **depthBelowLandLayer**            | Layer below the surface (valid for some variables only, here there   |
+|                                     | is only the upper surface level).                                    |
++-------------------------------------+----------------------------------------------------------------------+
+|  **number**                         | Number of the ensemble member. The 0-th member is the control run.   |
+|                                     | Also present in observation for compatibility reasons, but set to 0. |
++-------------------------------------+----------------------------------------------------------------------+
+|  **time**                           | Forecast or reforecast date (reforecasts are only issued             |
+|                                     | on Mondays and Thursdays).                                           |
++-------------------------------------+----------------------------------------------------------------------+
+|  **year**                           | Dimension to identify the year in the past, year=1 means a forecast  |
+|                                     | valid 20 years ago at the reforecast day and month, year=20 means    |
+|                                     | a forecast valid one year before the reforecast date.                |
+|                                     | Only valid for reforecasts.                                          |
++-------------------------------------+----------------------------------------------------------------------+
+|  **step**                           | Step of the forecast (the lead time).                                |
++-------------------------------------+----------------------------------------------------------------------+
+|  **surface**                        | Layer of the variable considered                                     |
+|                                     | (here there is just one, at the surface).                            |
++-------------------------------------+----------------------------------------------------------------------+
+|   **isobaricInhPa**                 | Pressure level in hectopascal (or millibar).                         |
++-------------------------------------+----------------------------------------------------------------------+
+|   valid_time                        | Actual time and date of the corresponding forecast data.             |
++-------------------------------------+----------------------------------------------------------------------+
+
+.. note::
+
+   **Bold** metadata denotes dimensions indexing the datasets.
+
+Stations data
+~~~~~~~~~~~~~
+
+For station forecast and reforecast data, the following metadata are available:
+
++-------------------------------------+----------------------------------------------------------------------+
+| Metadata                            | Description                                                          |
++=====================================+======================================================================+
+|  station_latitude                   | Latitude of the station.                                             |
++-------------------------------------+----------------------------------------------------------------------+
+|  station_longitude                  | Longitude of the station.                                            |
++-------------------------------------+----------------------------------------------------------------------+
+|  station_altitude                   | Altitude of the station (in meter).                                  |
++-------------------------------------+----------------------------------------------------------------------+
+|  **station_id**                     | Unique identifier of the station.                                    |
++-------------------------------------+----------------------------------------------------------------------+
+|  **depthBelowLandLayer**            | Layer below the surface (valid for some variables only, here there   |
+|                                     | is only the upper surface level).                                    |
++-------------------------------------+----------------------------------------------------------------------+
+|  **number**                         | Number of the ensemble member. The 0-th member is the control run.   |
+|                                     | Also present in observation for compatibility reasons, but set to 0. |
++-------------------------------------+----------------------------------------------------------------------+
+|  **time**                           | Forecast or reforecast date (reforecasts are only issued             |
+|                                     | on Mondays and Thursdays).                                           |
++-------------------------------------+----------------------------------------------------------------------+
+|  **year**                           | Dimension to identify the year in the past, year=1 means a forecast  |
+|                                     | valid 20 years ago at the reforecast day and month, year=20 means    |
+|                                     | a forecast valid one year before the reforecast date.                |
+|                                     | Only valid for reforecasts.                                          |
++-------------------------------------+----------------------------------------------------------------------+
+|  **step**                           | Step of the forecast (the lead time).                                |
++-------------------------------------+----------------------------------------------------------------------+
+|  **surface**                        | Layer of the variable considered                                     |
+|                                     | (here there is just one, at the surface).                            |
++-------------------------------------+----------------------------------------------------------------------+
+|   **isobaricInhPa**                 | Pressure level in hectopascal (or millibar).                         |
++-------------------------------------+----------------------------------------------------------------------+
+|  station_land_usage                 | Land usage at the station location, extracted from the               |
+|                                     | `CORINE 2018`_ dataset.                                              |
++-------------------------------------+----------------------------------------------------------------------+
+|  station_name                       | Name of the station.                                                 |
++-------------------------------------+----------------------------------------------------------------------+
+|  model_latitude                     | Latitude of the model grid point.                                    |
++-------------------------------------+----------------------------------------------------------------------+
+|  model_longitude                    | Longitude of the model grid point.                                   |
++-------------------------------------+----------------------------------------------------------------------+
+|  model_altitude                     | True altitude (in meter) of the model grid point, extracted from the |
+|                                     | `EU-DEMv1.1 <https://land.copernicus.eu/imagery-in-situ/eu-dem>`__   |
+|                                     | data elevation model dataset.                                        |
++-------------------------------------+----------------------------------------------------------------------+
+|  model_orography                    | Surface height (in meter) in the model at the model grid point.      |
++-------------------------------------+----------------------------------------------------------------------+
+|  model_land_usage                   | Land usage at the model grid point, extracted from the               |
+|                                     | `CORINE 2018`_ dataset.                                              |
++-------------------------------------+----------------------------------------------------------------------+
+|   valid_time                        | Actual time and date of the corresponding forecast data.             |
++-------------------------------------+----------------------------------------------------------------------+
 
 .. note::
 
    The metadata with `model' in their name indicate properties of the model grid point the closest to the station location, and
    at which the forecasts corresponding to the station observations was extracted from the gridded dataset.
 
-.. warning::
+For the station observations, the following metadata are available:
 
-   For the station observation data, the **valid_time** metadata is not available.
-
-For all data, attributes specifying the sources and the license are also present.
++-------------------------------------+----------------------------------------------------------------------+
+| Metadata                            | Description                                                          |
++=====================================+======================================================================+
+|  altitude                           | Altitude of the station (in meter).                                  |
++-------------------------------------+----------------------------------------------------------------------+
+|  land_usage                         | Land usage at the station location, extracted from the               |
+|                                     | `CORINE 2018`_ dataset.                                              |
++-------------------------------------+----------------------------------------------------------------------+
+|  latitude                           | Latitude of the station.                                             |
++-------------------------------------+----------------------------------------------------------------------+
+|  longitude                          | Longitude of the station.                                            |
++-------------------------------------+----------------------------------------------------------------------+
+|  **station_id**                     | Unique identifier of the station.                                    |
++-------------------------------------+----------------------------------------------------------------------+
+|  station_name                       | Name of the station.                                                 |
++-------------------------------------+----------------------------------------------------------------------+
+|  **step**                           | Step of the forecast (the lead time).                                |
++-------------------------------------+----------------------------------------------------------------------+
+|  **time**                           | Forecast or reforecast date (reforecasts are only issued             |
+|                                     | on Mondays and Thursdays).                                           |
++-------------------------------------+----------------------------------------------------------------------+
 
 5 - Major ECMWF model changes
 -----------------------------
@@ -826,3 +918,4 @@ corresponding datasets.
 .. _Cycle 45r1 full documentation: https://www.ecmwf.int/en/publications/search/?solrsort=sort_label%20asc&secondary_title=%22IFS%20Documentation%20CY45R1%22
 .. _Cycle 43r3 full documentation: https://www.ecmwf.int/en/publications/search/?solrsort=sort_label%20asc&secondary_title=%22IFS%20Documentation%20CY43R3%22
 .. _xarray: http://xarray.pydata.org/en/stable/index.html
+.. _CORINE 2018: https://land.copernicus.eu/pan-european/corine-land-cover

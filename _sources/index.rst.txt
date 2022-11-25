@@ -18,6 +18,7 @@ then be processed by other languages, and a few line of Python codes suffice to 
    * **Climetlab plugin version**: 0.1.9
    * **EUPPBench dataset version**: 1.0
    * **Base dataset version**: 1.0
+   * **Dataset status**: :ref:`files/datasets_status:Datasets status`
 
 .. toctree::
    :maxdepth: 1
