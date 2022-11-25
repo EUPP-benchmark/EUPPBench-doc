@@ -5,7 +5,7 @@ In addition to the datasets status below, one can check for the infrastructure s
 `https://www.ecmwf.int/en/service-status <https://www.ecmwf.int/en/service-status>`_ .
 
 EUPPBench datasets
--------------------
+------------------
 
 * Status: |EUPP_grid_on| |EUPP_station_on|
 
@@ -16,7 +16,7 @@ EUPPBench datasets
 +----------------------------------------------+--------------+---------------------------------+
 
 EUMETNET base datasets
------------------------
+----------------------
 
 * Status: |base_on|
 
@@ -26,11 +26,11 @@ EUMETNET base datasets
 | Base dataset v1.0 is unofficially up.        | 25-nov-2022  | /                               |
 +----------------------------------------------+--------------+---------------------------------+
 
-.. |base_on| image:: https://img.shields.io/badge/Base dataset-Online-green.svg
-.. |base_off| image:: https://img.shields.io/badge/Base dataset-Offline-red.svg
+.. |base_on| image:: https://img.shields.io/badge/Base%20dataset-Online-green.svg
+.. |base_off| image:: https://img.shields.io/badge/Base%20dataset-Offline-red.svg
 
-.. |EUPP_grid_on| image:: https://img.shields.io/badge/EUPP gridded dataset-Online-green.svg
-.. |EUPP_grid_off| image:: https://img.shields.io/badge/EUPP gridded dataset-Offline-red.svg
+.. |EUPP_grid_on| image:: https://img.shields.io/badge/EUPP%20gridded%20dataset-Online-green.svg
+.. |EUPP_grid_off| image:: https://img.shields.io/badge/EUPP%20gridded%20dataset-Offline-red.svg
 
-.. |EUPP_station_on| image:: https://img.shields.io/badge/EUPP station dataset-Online-green.svg
-.. |EUPP_station_off| image:: https://img.shields.io/badge/EUPP station dataset-Offline-red.svg
+.. |EUPP_station_on| image:: https://img.shields.io/badge/EUPP%20station%20dataset-Online-green.svg
+.. |EUPP_station_off| image:: https://img.shields.io/badge/EUPP%20station%20dataset-Offline-red.svg
