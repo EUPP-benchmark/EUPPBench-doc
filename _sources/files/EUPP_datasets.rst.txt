@@ -1,7 +1,7 @@
 EUPPBench datasets
 ==================
 
-The *EUPPBench* datasets are available on a smaller portion of Europe stored in `Zarr <https://zarr.readthedocs.io/en/stable/>`_
+The *EUPPBench* datasets are available on a small portion of Europe stored in `Zarr <https://zarr.readthedocs.io/en/stable/>`_
 format for an easy access allowing for slicing.
 The forecasts and observations datasets are already paired together, providing analysis-ready data
 for postprocessing benchmarking purposes.
@@ -24,7 +24,7 @@ A forecasts and observations dataset on a regular latitude-longitude grid.
 
 -  The gridded EUPPBench postprocessing benchmark dataset contains
    `ECMWF <https://www.ecmwf.int/>`__ ensemble and deterministic
-   forecasts over a small domain in Europe, rom 47.75° to 53.5° in latitude, and from 2.5° to 10.5° in longitude,
+   forecasts over a small domain in Europe, rom 45.75° to 53.5° in latitude, and from 2.5° to 10.5° in longitude,
    and covers the years 2017-2018.
 -  It also contains the corresponding ERA5 reanalysis for the purpose of
    providing observations for the benchmark.
@@ -748,7 +748,7 @@ Depending on the kind of dataset, dimensions and information are embedded in the
 Gridded data
 ~~~~~~~~~~~~
 
-The following metadata are available in the gridded forecast, reforecast and data:
+The following metadata are available in the gridded forecast, reforecast and observation data:
 
 +-------------------------------------+----------------------------------------------------------------------+
 | Metadata                            | Description                                                          |
