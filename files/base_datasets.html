@@ -44,7 +44,7 @@
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="EUPPBench datasets" href="EUPP_datasets.html" /> 
+    <link rel="prev" title="EUPPBench datasets" href="EUPPBench_datasets.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,17 +97,17 @@
             
               <p class="caption" role="heading"><span class="caption-text">Currently available datasets:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="EUPP_datasets.html">EUPPBench datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EUPPBench_datasets.html">EUPPBench datasets</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Base datasets over Europe’s domain</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#datasets-description">Datasets description</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gridded-data">1 - Gridded Data</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#extreme-forecast-index">1.1 - Extreme Forecast Index</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#surface-variable-forecasts">1.2 - Surface variable forecasts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pressure-level-variable-forecasts">1.3 - Pressure level variable forecasts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#postprocessed-surface-variable-forecasts">1.4 - Postprocessed surface variable forecasts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#processed-surface-variable-forecasts">1.4 - Processed surface variable forecasts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#surface-variable-reforecasts">1.5 - Surface variable reforecasts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pressure-level-variable-reforecasts">1.6 - Pressure level variable reforecasts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#postprocessed-surface-variable-reforecasts">1.7 - Postprocessed surface variable reforecasts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#processed-surface-variable-reforecasts">1.7 - Processed surface variable reforecasts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#static-fields">1.8 - Static fields</a></li>
 </ul>
 </li>
@@ -507,11 +507,11 @@ to <code class="docutils literal notranslate"><span class="pre">'highres'</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="postprocessed-surface-variable-forecasts">
-<h3>1.4 - Postprocessed surface variable forecasts<a class="headerlink" href="#postprocessed-surface-variable-forecasts" title="Permalink to this heading">¶</a></h3>
-<p>Postprocessed surface variables can be obtained for each forecast date,
+<div class="section" id="processed-surface-variable-forecasts">
+<h3>1.4 - Processed surface variable forecasts<a class="headerlink" href="#processed-surface-variable-forecasts" title="Permalink to this heading">¶</a></h3>
+<p>Processed surface variables can be obtained for each forecast date,
 both for the ensemble (51 members) and deterministic runs. A
-postprocessed variable is either accumulated, averaged or filtered.</p>
+processed variable is either accumulated, averaged or filtered.</p>
 <p>It includes:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -589,8 +589,8 @@ available for the model steps (in hours) 6, 12, 18, 24, 30, 36, 42, 48,
 54, 60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120, 126, 132, 138, 144,
 150, 156, 162, 168, 174, 180, 186, 192, 198, 204, 210, 216, 222, 228,
 234 and 240. All the steps are automatically retrieved.</p>
-<p><strong>Usage:</strong> The postprocessed surface variables forecasts can be retrieved by calling</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cml</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;eumetnet-postprocessing-benchmark-training-data-gridded-forecasts-surface-postprocessed&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">parameter</span><span class="p">,</span> <span class="n">kind</span><span class="p">)</span>
+<p><strong>Usage:</strong> The processed surface variables forecasts can be retrieved by calling</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cml</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;eumetnet-postprocessing-benchmark-training-data-gridded-forecasts-surface-processed&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">parameter</span><span class="p">,</span> <span class="n">kind</span><span class="p">)</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -607,7 +607,7 @@ along the others and must be downloaded alone. E.g. a request with
 <code class="docutils literal notranslate"><span class="pre">parameter='tp'</span></code> will succeed.</p>
 </div>
 <p><strong>Example:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cml</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;eumetnet-postprocessing-benchmark-training-data-gridded-forecasts-surface-postprocessed&#39;</span><span class="p">,</span> <span class="s2">&quot;2017-12-02&quot;</span><span class="p">,</span> <span class="s2">&quot;mx2t6&quot;</span><span class="p">,</span> <span class="s2">&quot;highres&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cml</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;eumetnet-postprocessing-benchmark-training-data-gridded-forecasts-surface-processed&#39;</span><span class="p">,</span> <span class="s2">&quot;2017-12-02&quot;</span><span class="p">,</span> <span class="s2">&quot;mx2t6&quot;</span><span class="p">,</span> <span class="s2">&quot;highres&quot;</span><span class="p">)</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -671,9 +671,9 @@ as a string or an integer.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="postprocessed-surface-variable-reforecasts">
-<h3>1.7 - Postprocessed surface variable reforecasts<a class="headerlink" href="#postprocessed-surface-variable-reforecasts" title="Permalink to this heading">¶</a></h3>
-<p>Postprocessed surface variables as described in section <strong>1.4</strong> can also
+<div class="section" id="processed-surface-variable-reforecasts">
+<h3>1.7 - Processed surface variable reforecasts<a class="headerlink" href="#processed-surface-variable-reforecasts" title="Permalink to this heading">¶</a></h3>
+<p>Processed surface variables as described in section <strong>1.4</strong> can also
 be obtained as ensemble reforecasts (11 members).</p>
 <p>The reforecast are available for the same model steps as the surface
 variables described in section <strong>1.5</strong>.</p>
@@ -683,7 +683,7 @@ variables described in section <strong>1.5</strong>.</p>
 Thursdays. Providing any other date will fail.</p>
 </div>
 <p><strong>Usage:</strong> The surface variables forecasts can be retrieved by calling</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cml</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;eumetnet-postprocessing-benchmark-training-data-gridded-reforecasts-surface-postprocessed&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">parameter</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cml</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;eumetnet-postprocessing-benchmark-training-data-gridded-reforecasts-surface-processed&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">parameter</span><span class="p">)</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -698,7 +698,7 @@ along the others and must be downloaded alone. E.g. a request with
 <code class="docutils literal notranslate"><span class="pre">parameter='tp'</span></code> will succeed.</p>
 </div>
 <p><strong>Example:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cml</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;eumetnet-postprocessing-benchmark-training-data-gridded-reforecasts-surface-postprocessed&#39;</span><span class="p">,</span> <span class="s2">&quot;2017-12-28&quot;</span><span class="p">,</span> <span class="s2">&quot;mx2t6&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cml</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;eumetnet-postprocessing-benchmark-training-data-gridded-reforecasts-surface-processed&#39;</span><span class="p">,</span> <span class="s2">&quot;2017-12-28&quot;</span><span class="p">,</span> <span class="s2">&quot;mx2t6&quot;</span><span class="p">)</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -839,7 +839,7 @@ using the <code class="docutils literal notranslate"><span class="pre">get_obser
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="EUPP_datasets.html" class="btn btn-neutral float-left" title="EUPPBench datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="EUPPBench_datasets.html" class="btn btn-neutral float-left" title="EUPPBench datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
