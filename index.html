@@ -1,26 +1,27 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The EUPP postprocessing benchmark dataset documentation &mdash; The EUPP postprocessing benchmark dataset documentation v1.0 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/thebelab-helper.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=e160b93e"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/thebelab-helper.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -32,15 +33,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> The EUPP postprocessing benchmark dataset documentation
-            <img src="_static/logo-eumetnet.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="#" class="icon icon-home">
+            The EUPP postprocessing benchmark dataset documentation
+              <img src="_static/logo-eumetnet.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                v1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -49,6 +51,7 @@
               <p class="caption" role="heading"><span class="caption-text">Currently available datasets:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="files/EUPPBench_datasets.html">EUPPBench datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files/EUPreciPBench_datasets.html">EUPreciPBench datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files/base_datasets.html">Base datasets over Europe’s domain</a></li>
 </ul>
 
@@ -65,7 +68,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a></li>
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">The EUPP postprocessing benchmark dataset documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
@@ -77,7 +80,7 @@
            <div itemprop="articleBody">
              
   <section id="the-eupp-postprocessing-benchmark-dataset-documentation">
-<h1>The EUPP postprocessing benchmark dataset documentation<a class="headerlink" href="#the-eupp-postprocessing-benchmark-dataset-documentation" title="Permalink to this heading"></a></h1>
+<h1>The EUPP postprocessing benchmark dataset documentation<a class="headerlink" href="#the-eupp-postprocessing-benchmark-dataset-documentation" title="Link to this heading"></a></h1>
 <p>This website document the EUMETNET postprocessing benchmark datasets, an initiative to provide high-quality datasets to derive
 easily analysis-ready datasets that can be used to perform benchmarking tasks of weather forecast postprocessing methods.</p>
 <p>The main tool to download and manage the data is a Python plugin. It can however convert the data to formats that can
@@ -85,9 +88,11 @@ then be processed by other languages, and a few line of Python codes suffice to 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p><strong>Climetlab plugin version</strong>: 0.2.5</p></li>
-<li><p><strong>EUPPBench dataset version</strong>: v1.0</p></li>
+<li><p><strong>Climetlab plugin version</strong>: 0.3.0</p></li>
+<li><p><strong>Intake catalogues version</strong>: 0.2.0</p></li>
 <li><p><strong>Base dataset version</strong>: v1.0</p></li>
+<li><p><strong>EUPPBench dataset version</strong>: v1.0</p></li>
+<li><p><strong>EUPreciPBench dataset version</strong>: 0.5</p></li>
 <li><p><strong>Dataset status</strong>: <a class="reference internal" href="files/datasets_status.html#datasets-status"><span class="std std-ref">Datasets status</span></a></p></li>
 </ul>
 </div>
@@ -95,11 +100,12 @@ then be processed by other languages, and a few line of Python codes suffice to 
 <p class="caption" role="heading"><span class="caption-text">Currently available datasets:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="files/EUPPBench_datasets.html">EUPPBench datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files/EUPreciPBench_datasets.html">EUPreciPBench datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files/base_datasets.html">Base datasets over Europe’s domain</a></li>
 </ul>
 </div>
 <section id="using-climetlab-to-access-the-data">
-<h2>Using climetlab to access the data<a class="headerlink" href="#using-climetlab-to-access-the-data" title="Permalink to this heading"></a></h2>
+<h2>Using climetlab to access the data<a class="headerlink" href="#using-climetlab-to-access-the-data" title="Link to this heading"></a></h2>
 <p>A plugin for <a class="reference external" href="https://github.com/ecmwf/climetlab">climetlab</a> to
 retrieve the Eumetnet postprocessing benchmark datasets is available.</p>
 <p><a class="reference external" href="https://badge.fury.io/py/climetlab-eumetnet-postprocessing-benchmark"><img alt="PyPI version" src="https://badge.fury.io/py/climetlab-eumetnet-postprocessing-benchmark.svg" /></a> <a class="reference external" href="https://pypi.org/project/climetlab-eumetnet-postprocessing-benchmark/"><img alt="PyPI pyversions" src="https://img.shields.io/pypi/pyversions/climetlab-eumetnet-postprocessing-benchmark.svg" /></a> <a class="reference external" href="https://github.com/Climdyn/climetlab-eumetnet-postprocessing-benchmark/actions/workflows/check-and-publish.yml"><img alt="build" src="https://github.com/Climdyn/climetlab-eumetnet-postprocessing-benchmark/actions/workflows/check-and-publish.yml/badge.svg?branch=main" /></a></p>
@@ -123,7 +129,7 @@ notebooks</a>
 lines of code such as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment the line below if climetlab and the plugin are not yet installed</span>
 <span class="c1">#!pip install climetlab climetlab-eumetnet-postprocessing-benchmark</span>
-<span class="kn">import</span> <span class="nn">climetlab</span> <span class="k">as</span> <span class="nn">cml</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">climetlab</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cml</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">cml</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;eumetnet-postprocessing-benchmark-training-data-gridded-forecasts-surface&#39;</span><span class="p">,</span> <span class="s2">&quot;2017-12-02&quot;</span><span class="p">,</span> <span class="s2">&quot;2t&quot;</span><span class="p">,</span> <span class="s2">&quot;highres&quot;</span><span class="p">)</span>
 <span class="n">fcs</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span>
 </pre></div>
@@ -131,9 +137,24 @@ lines of code such as:</p>
 <p>which for instance download the deterministic (high-resolution) forecasts for the 2
 metres temperature.</p>
 </section>
+<section id="using-the-intake-catalogue-to-access-the-data">
+<h2>Using the Intake catalogue to access the data<a class="headerlink" href="#using-the-intake-catalogue-to-access-the-data" title="Link to this heading"></a></h2>
+<p>An <a class="reference external" href="https://github.com/EUPP-benchmark/intake-eumetnet-postprocessing-benchmark">Intake catalogue</a> is also available, as an alternative way to get the datasets.
+Note that the <a class="reference internal" href="files/base_datasets.html#base-datasets-over-europe-s-domain"><span class="std std-ref">Base datasets over Europe’s domain</span></a> cannot be retrieved by this method.</p>
+<p>Access through the catalogue can be done with the Python command line interface in a few lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment the line below if the catalogue is not yet installed</span>
+<span class="c1">#!pip install euppbench-datasets</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">euppbench_datasets</span>
+<span class="n">cat</span> <span class="o">=</span> <span class="n">euppbench_datasets</span><span class="o">.</span><span class="n">open_catalog</span><span class="p">()</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">euppbench</span><span class="o">.</span><span class="n">training_data</span><span class="o">.</span><span class="n">gridded</span><span class="o">.</span><span class="n">EUPPBench_highres_forecasts_surface</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>which download the <a class="reference external" href="https://eupp-benchmark.github.io/EUPPBench-doc/files/EUPPBench_datasets.html#surface-variable-forecasts">original EUPPBench deterministic (high-resolution) forecasts</a>
+in the <a class="reference external" href="http://xarray.pydata.org/en/stable/index.html">xarray</a> format.</p>
+</section>
 </section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
@@ -151,7 +172,7 @@ metres temperature.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, GIE EUMETNET - PP module.</p>
+    <p>&#169; Copyright 2025, SNC EUMETNET - PP module.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
